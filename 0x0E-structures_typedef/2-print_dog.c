@@ -1,22 +1,28 @@
-#include <stdio.h>
+#include "dog.h"
 
-struct Dog {
-    char name[20];
-    int age;
-    char breed[20];
-};
+/**
+* print_dog - prints a struct dog
+*@d: dog identification
+*
+*/
 
-int main() {
-    struct Dog myDog;
-    myDog.age = 3;
-    
-    // Initialize name and breed without trailing whitespace
-    strcpy(myDog.name, "Buddy");
-    strcpy(myDog.breed, "Golden Retriever");
-    
-    printf("Name: %s\n", myDog.name);
-    printf("Age: %d\n", myDog.age);
-    printf("Breed: %s\n", myDog.breed);
-    
-    return 0;
+void print_dog(struct dog *d)
+{
+if (d == NULL )
+ 
+if ((*d).name == NULL)
+printf("nil\n");
+else
+printf("Name: %s\n", d->name);
+
+if ((*d).age < 0)
+printf("nil\n");
+else
+printf("Age: %f\n", d->age);
+
+if ((*d).owner == NULL)
+printf("nil\n");
+else
+printf("Owner: %s\n", d->owner);
+return 0;
 }
